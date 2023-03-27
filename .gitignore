@@ -1,9 +1,8 @@
 /.metadata/
 /build/
-.classpath
-.project
+
 .metadata
-.settings/
+
 .loadpath
 local.properties
 bin/
