@@ -3,7 +3,7 @@
 <%-- jstl 사용하기 위한 코드 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- 프로젝트의 context 경로를 편하게 사용하기 위한 코드 --%>
-<c:set var="root" value="${pageContext.request.contextPath}"/>
+<c:set var="root" value="<%=request.getContextPath() %>"/>
 
 <meta charset="UTF-8">
 <title>tourmate</title>
@@ -16,9 +16,12 @@
   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
   crossorigin="anonymous"
 />
+
+
+
 <%-- request 객체에 msg가 들어있을 때 해당 내용 알림창 띄우기 --%>
-<script>
-	<c:if test="${!empty msg}">
-		alert("${msg}");
-	</c:if>
-</script>
+<!-- <script> -->
+<%-- // 	<c:if test="${!empty msg}"> --%>
+<%-- // 		alert("${msg}"); --%>
+<%-- // 	</c:if> --%>
+<!-- </script> -->

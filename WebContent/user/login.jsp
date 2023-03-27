@@ -27,7 +27,7 @@
         style="position: relative; background-color: #d8d8d8"
       >
         <div class="container">
-          <a class="navbar-brand link-light fw-bold fs-2" href="main.html"
+          <a class="navbar-brand link-light fw-bold fs-2" href="<%=request.getContextPath() %>/index.jsp"
             ><img src="../assets/img/logo.png" style="width: 120px; height: 40px" alt="logo"
           /></a>
         </div>

@@ -21,7 +21,11 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String action = req.getParameter("action");
 		try {
-			if(action.equals("logout")) {
+			if(action.equals("login")) {
+				resp.sendRedirect("user/login.jsp");
+			} else if(action.equals("register")) {
+				resp.sendRedirect("user/regist.jsp");
+			} else if(action.equals("logout")) {
 				
 			}
 
