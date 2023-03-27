@@ -9,10 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dto.SidoDto;
 import dto.TourDto;
-import dto.TypeDto;
 import service.TourService;
 
 @WebServlet("/tour")
@@ -29,22 +29,20 @@ public class TourController extends HttpServlet {
 				String contentTypeId = req.getParameter("contentTypeId");
 				String keyword = req.getParameter("keyword");
 				
-				if (keyword == null) {
-					ArrayList<SidoDto> sidoList = tourService.getSido();
-					ArrayList<TypeDto> typeList = tourService.getType();
-					
-					req.getRequestDispatcher("/tourplace/search.jsp").forward(req, resp);
-				} else {
-					
-					try {
-						ArrayList<TourDto> tourlist = tourService.searchPlace(areaCode, contentTypeId, keyword);
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					
+				HttpSession session = req.getSession();
+				ArrayList<SidoDto> sidoList = (ArrayList<SidoDto>) session.getAttribute("sidoList");
+				
+				if (sidoList == null) {
+					 sidoList = tourService.getSido();
+					session.setAttribute("sidoList", sidoList);
 				}
+				
+				if (keyword != null) {
+					ArrayList<TourDto> tourList = tourService.searchPlace(areaCode, contentTypeId, keyword);
+					System.out.println(tourList);
+					req.setAttribute("tourList", tourList);
+				}
+				req.getRequestDispatcher("/tourplace/search.jsp").forward(req, resp);
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

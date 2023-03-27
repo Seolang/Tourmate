@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="root" value="${pageContext.request.contextPath}"/>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -77,11 +79,15 @@
               <div class="alert alert-primary mt-3 text-center fw-bold fs-4" role="alert">
                 전국 관광지 검색
               </div>
-              <form class="d-flex my-3" onsubmit="return false;" role="search">
-                <select id="search-area" class="form-select me-2" style="height: 60px">
+              <form class="d-flex my-3" action="${root }/tour" method="GET">
+              	<input type="hidden" name="action" value="search">
+                <select id="search-area" class="form-select me-2" name="areaCode" style="height: 60px">
                   <option value="0" selected>검색 할 지역 선택</option>
+                  <c:forEach items="${sidoList }" var="s">
+                  	<option value="${s.code }">${s.name }</option>
+                  </c:forEach>
                 </select>
-                <select id="search-content-id" class="form-select me-2" style="height: 60px">
+                <select id="search-content-id" class="form-select me-2" name="contentTypeId" style="height: 60px">
                   <option value="0" selected>관광지 유형</option>
                   <option value="12">관광지</option>
                   <option value="14">문화시설</option>
@@ -99,16 +105,16 @@
                   placeholder="검색어"
                   aria-label="검색어"
                   style="height: 60px"
+                  name="keyword"
                 />
-                <button
+                <input
                   id="btn-search"
                   class="btn btn-light btn-lg"
-                  type="button"
-                  onclick="search()"
+                  type="submit"
                   style="width: 30%; height: 60px"
                 >
-                  검색
-                </button>
+                  	검색
+                </input>
               </form>
             </div>
           </div>
@@ -133,7 +139,27 @@
         <!-- main-second start -->
         <div class="tour-list">
           <div class="row mt-5 text-center fw-bold fs-1"><div id="tour-list-head"></div></div>
-          <div class="row" id="tour-list-grid"></div>
+          <div class="row" id="tour-list-grid">
+          	<c:forEach items="${tourList }" var="t">
+	          	<div class="col-lg-4 col-md-6 col-sm-12">
+	            <div class="card mt-5 mb-5 ms-2 me-2 p-2 text-center">
+	            	<c:if test="${not empty imageURL }">
+	            		<img src="${t.imageURL}" class="card-img-top" alt="..." />
+	            	</c:if>
+	            	<c:if test="${empty imageURL }">
+	            		<img src="../assets/img/noimg.png" class="card-img-top" alt="..." />
+	            	</c:if>
+	              
+	              <div class="card-body p-3">
+	                <h5 class="card-title">${t.title}</h5>
+	                <p class="card-text">${t.addr1} ${t.addr2}</p>
+	                <a href="#" class="btn btn-primary" onclick="moveCenter(${area.mapy}, ${area.mapx});">위치보기</a>
+	              </div>
+	            </div>
+	          </div>
+          	</c:forEach>
+          
+          </div>
         </div>
         <!-- main-second end -->
       </div>
@@ -157,65 +183,8 @@
 
     <script>
       window.onload = () => {
-        checkLogin();
-        let areaUrl =
-          "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=" +
-          serviceKey +
-          "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json";
 
-        fetch(areaUrl, { method: "GET" })
-          .then((response) => response.json())
-          .then((data) => makeOption(data))
-          .then(() => {
-            let localArea = localStorage.getItem("localArea");
-            console.log(localArea);
-            if (localArea) {
-              localStorage.removeItem("localArea");
-              let areaCode = document.getElementById("search-area");
-              let contentTypeId = document.getElementById("search-content-id");
-              let keyword = document.getElementById("search-keyword");
-
-              areaCode.value = 3;
-              keyword.value = localArea;
-              search();
-            }
-          });
-      };
-
-      function makeOption(data) {
-        console.log(data);
-        let areas = data.response.body.items.item;
-        let sel = document.getElementById("search-area");
-        areas.forEach((area) => {
-          let opt = document.createElement("option");
-          opt.setAttribute("value", area.code);
-          opt.appendChild(document.createTextNode(area.name));
-
-          sel.appendChild(opt);
-        });
-      }
-
-      // 검색 버튼을 누르면..
-      // 지역, 유형, 검색어 얻기.
-      // 위 데이터를 가지고 공공데이터에 요청.
-      // 받은 데이터를 이용하여 화면 구성.
-      const search = () => {
-        let searchUrl = `https://apis.data.go.kr/B551011/KorService1/searchKeyword1?serviceKey=${serviceKey}&numOfRows=100&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A`;
-
-        let areaCode = document.getElementById("search-area").value;
-        let contentTypeId = document.getElementById("search-content-id").value;
-        let keyword = document.getElementById("search-keyword").value;
-
-        if (parseInt(areaCode)) searchUrl += `&areaCode=${areaCode}`;
-        if (parseInt(contentTypeId)) searchUrl += `&contentTypeId=${contentTypeId}`;
-        if (!keyword) {
-          alert("검색어 입력 필수!!!");
-          return;
-        } else searchUrl += `&keyword=${keyword}`;
-
-        fetch(searchUrl)
-          .then((response) => response.json())
-          .then((data) => makeList(data));
+        
       };
 
       var positions; // marker 배열.
