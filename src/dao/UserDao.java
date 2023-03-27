@@ -15,22 +15,22 @@ public class UserDao {
 		return instance;
 	}
 	
-	public static int insert(String id, String pw, String name, String phone) throws SQLException {
+	public static int insert(String userId, String userPw, String userName, String userPhone) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		int result = 0;
 		DBUtil util = new DBUtil();
 		
-		try {
+		try {			
 			conn = util.getConnection();
-			sql = " INSERT INTO USER VALUES(?, ?, ?, ?) ";
+			sql = " INSERT INTO USER VALUES(?,?,?,?) ";
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, id);
-			pstmt.setString(2, pw);
-			pstmt.setString(3, name);
-			pstmt.setString(4, phone);
+			pstmt.setString(1, userId);
+			pstmt.setString(2, userPw);
+			pstmt.setString(3, userName);
+			pstmt.setString(4, userPhone);
 			
 			result = pstmt.executeUpdate();
 		}finally {

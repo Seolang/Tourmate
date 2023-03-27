@@ -15,7 +15,7 @@ import service.UserService;
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
 
-	static UserService uservice = UserService.getInstance();
+	UserService uservice = UserService.getInstance();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,13 +37,14 @@ public class UserServlet extends HttpServlet {
 		String action = req.getParameter("action");
 		try {
 			if(action.equals("register")) {
-				String id = req.getParameter("userId");
-				String pw = req.getParameter("userPw");
-				String name = req.getParameter("userName");
-				String phone = req.getParameter("userPhone");
-				int isRegister = uservice.register(id, pw, name, phone);
+				String userId = req.getParameter("userId");
+				String userPw = req.getParameter("userPw");
+				String userName = req.getParameter("userName");
+				String userphone = req.getParameter("userPhone");
+				
+				int isRegister = uservice.register(userId, userPw, userName, userphone);
 				if(isRegister == 1) {
-					resp.sendRedirect("registerSuccess.jsp");
+					resp.sendRedirect("user/registerSuccess.jsp");
 				}else {
 					resp.sendRedirect("error/error.jsp");
 				}

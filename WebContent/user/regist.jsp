@@ -39,19 +39,20 @@
       >
         <main class="main-container" style="padding-bottom: 0px">
           <div class="login-page" style="padding: 70px 0px 0px">
-            <div class="form">
+            <form class="form" action="<%=request.getContextPath() %>/user" method="post">
               <div class="roof">회원가입</div>
               <input type="text" placeholder="사용하실 ID를 입력해주세요" id="id" name="userId" />
               <input type="password" placeholder="사용하실 비밀번호를 입력해주세요" id="pwd" name="userPw" />
               <input type="password" placeholder="비밀번호 확인" id="pwdConfirm" />
               <input type="text" placeholder="이름" id="name" name="userName" />
-              <input type="tel" placeholder="휴대폰 번호" id="tel" name="userPhone "/>
+              <input type="tel" placeholder="휴대폰 번호" id="tel" name="userPhone"/>
               <div class="message"></div>
               <button class="regist-btn" onclick="checkRegist()">회원 등록</button>
+              <input type="hidden" name="action" value="register" />
               <div class="sub-btn-container">
                 이미 회원이신가요? <a href="login.html">로그인 하기</a>
               </div>
-            </div>
+            </form>
           </div>
         </main>
       </div>

@@ -14,8 +14,8 @@ public class UserService {
 	
 	static UserDao udao = UserDao.getInstance();
 	
-	public static int register(String id, String pw, String name, String phone) throws SQLException {
-		return udao.insert(id, pw, name, phone);
+	public static int register(String userId, String userPw, String userName, String userPhone) throws SQLException {
+		return udao.insert(userId, userPw, userName, userPhone);
 	}
 	
 	public static UserDto read(String id, String pw) throws SQLException {
