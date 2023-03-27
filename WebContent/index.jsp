@@ -43,10 +43,10 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0" id="before-login">
               <li class="nav-item">
-                <a class="nav-link active link-dark" href="login.html">로그인</a>
+                <a class="nav-link active link-dark" href="/user/login.jsp">로그인</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active link-dark" href="register.html">회원가입</a>
+                <a class="nav-link active link-dark" href="/user/regist.jsp">회원가입</a>
               </li>
             </ul>
           </div>
