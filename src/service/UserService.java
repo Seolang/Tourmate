@@ -1,6 +1,9 @@
 package service;
 
+import java.sql.SQLException;
+
 import dao.UserDao;
+import dto.UserDto;
 
 public class UserService {
 	private UserService() {}
@@ -9,9 +12,13 @@ public class UserService {
 		return instance;
 	}
 	
-	UserDao udao = UserDao.getInstance();
+	static UserDao udao = UserDao.getInstance();
 	
-	public static int register(String id, String pw, String name, String phone) {
-		return udao.register(id, pw, name, phone);
+	public static int register(String userId, String userPw, String userName, String userPhone) throws SQLException {
+		return udao.insert(userId, userPw, userName, userPhone);
+	}
+	
+	public static UserDto read(String id, String pw) throws SQLException {
+		return udao.selectOne(id, pw);
 	}
 }

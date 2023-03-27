@@ -40,17 +40,18 @@
       >
         <main class="main-container">
           <div class="login-page">
-            <div class="form">
+            <form class="form" action="<%=request.getContextPath() %>/user" method="post">
               <div class="roof">로그인</div>
-              <input type="text" placeholder="ID" id="id" onchange="idConfirm()" />
-              <input type="password" placeholder="password" id="password" />
+              <input type="text" placeholder="ID" id="id" name="userId" onchange="idConfirm()" />
+              <input type="password" placeholder="password" name="userPw" id="password" />
               <div class="message"></div>
-              <button class="login-btn" onclick="tryLogin()">로그인</button>
+              <button class="login-btn" onclick="tryLogin()">로그인</button> 
+              <input type="hidden" name="action" value="login" />
               <div class="sub-btn-container">
                 <div class="sub-btn"><a href="register.html">회원가입</a></div>
                 <div class="sub-btn"><a href="findPwd.html">비밀번호 찾기</a></div>
               </div>
-            </div>
+            </form>
           </div>
         </main>
       </div>

@@ -7,7 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dto.UserDto;
 import service.UserService;
 
 @WebServlet("/user")
@@ -25,6 +27,7 @@ public class UserServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			resp.sendRedirect("error/error.jsp");
 		}
 	}
 
@@ -34,17 +37,33 @@ public class UserServlet extends HttpServlet {
 		String action = req.getParameter("action");
 		try {
 			if(action.equals("register")) {
+				String userId = req.getParameter("userId");
+				String userPw = req.getParameter("userPw");
+				String userName = req.getParameter("userName");
+				String userphone = req.getParameter("userPhone");
+				
+				int isRegister = uservice.register(userId, userPw, userName, userphone);
+				if(isRegister == 1) {
+					resp.sendRedirect("user/registerSuccess.jsp");
+				}else {
+					resp.sendRedirect("error/error.jsp");
+				}
+			}else if(action.equals("login")) {
 				String id = req.getParameter("userId");
 				String pw = req.getParameter("userPw");
-				String name = req.getParameter("userName");
-				String phone = req.getParameter("userPhone");
-				int isRegister = uservice.register(id, pw, name, phone);
-			}else if(action.equals("login")) {
-				
+				UserDto userInfo = uservice.read(id, pw);
+				if(userInfo != null) {
+					HttpSession session = req.getSession();
+					session.setAttribute("userInfo", userInfo);
+					resp.sendRedirect("index.jsp");
+				}else {
+					resp.sendRedirect("error/loginFail.jsp");
+				}
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			resp.sendRedirect("error/error.jsp");
 		}
 	}
 }
