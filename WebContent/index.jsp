@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="root" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,6 +17,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+
   </head>
   <body>
     <div class="allContainer">
@@ -71,7 +75,7 @@
         <div class="mb-4">
           <h1 style="color: #dfdfdf">Tourmate와 함께 원하는 관광지를 찾아보세요!</h1>
         </div>
-        <a href="search.html"
+        <a href="${root }/tour?action=search"
           ><button type="button" class="btn btn-lg btn-success p-2">관광지 검색하러가기</button></a
         >
       </div>

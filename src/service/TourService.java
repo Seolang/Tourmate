@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import dao.TourDao;
 import dto.SidoDto;
 import dto.TourDto;
-import dto.TypeDto;
 
 public class TourService {
 	private final TourDao tourDao = TourDao.getInstance();
@@ -25,10 +24,5 @@ public class TourService {
 
 	public ArrayList<SidoDto> getSido() throws SQLException {
 		return tourDao.selectSido();
-	}
-
-	public ArrayList<TypeDto> getType() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
