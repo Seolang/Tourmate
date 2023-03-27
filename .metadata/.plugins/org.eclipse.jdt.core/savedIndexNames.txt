@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\SSAFY\Desktop\pjt-back\.metadata\.plugins\org.eclipse.jdt.core
-3757871411.index
-4011538960.index
