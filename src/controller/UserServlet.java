@@ -26,7 +26,9 @@ public class UserServlet extends HttpServlet {
 			} else if(action.equals("register")) {
 				resp.sendRedirect("user/regist.jsp");
 			} else if(action.equals("logout")) {
-				
+				HttpSession session = req.getSession();
+				session.invalidate();
+				resp.sendRedirect(req.getContextPath());
 			}
 
 		} catch (Exception e) {

@@ -60,7 +60,7 @@ public class UserDao {
 			if(rs.next()) {
 				result = new UserDto();
 				result.setId(rs.getString(1));
-				result.setId(rs.getString(2));
+				result.setUsername(rs.getString(2));
 			}
 			
 		}finally {

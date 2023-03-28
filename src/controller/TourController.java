@@ -39,8 +39,10 @@ public class TourController extends HttpServlet {
 				
 				if (keyword != null) {
 					ArrayList<TourDto> tourList = tourService.searchPlace(areaCode, contentTypeId, keyword);
-					System.out.println(tourList);
 					req.setAttribute("tourList", tourList);
+					req.setAttribute("areaCode", areaCode);
+					req.setAttribute("contentTypeId", contentTypeId);
+					req.setAttribute("keyword", keyword);
 				}
 				req.getRequestDispatcher("/tourplace/search.jsp").forward(req, resp);
 			}

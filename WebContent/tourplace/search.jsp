@@ -5,16 +5,8 @@
     <c:set var="root" value="${pageContext.request.contextPath}"/>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourmate</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+    <%@ include file="/include/head.jsp" %>
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/search.css" />
     <script
@@ -27,59 +19,13 @@
   <body>
     <div class="allContainer">
       <!-- NavBar start-->
-      <nav
-        class="navbar navbar-expand-lg nav-bg fw-bold"
-        style="position: relative; background-color: #d8d8d8"
-      >
-        <div class="container">
-          <!-- </div> -->
-          <a class="navbar-brand link-light fw-bold fs-2" href="main.html"
-            ><img src="./assets/img/logo.png" style="width: 120px; height: 40px" alt="logo"
-          /></a>
-          <button
-            class="navbar-toggler justify-content-end"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- 로그인 전 -->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0" id="before-login">
-              <li class="nav-item">
-                <a class="nav-link active link-dark fw-bold" href="login.html">로그인</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active link-dark fw-bold" href="register.html">회원가입</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 로그인 후 -->
-          <ul class="navbar-nav mb-2 mb-lg-0" id="after-login" style="display: none">
-            <li class="nav-item">
-              <a class="nav-link active link-dark fw-bold" href="#" onclick="setLogout()"
-                >로그아웃</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active link-dark fw-bold" href="myPage.html">마이페이지</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <%@ include file="/include/nav.jsp" %>
       <div class="bgContainer">
         <div style="width: 80%">
           <!-- 관광지 검색 start -->
           <div class="searchBar">
             <div class="col-md-9">
-              <div class="alert alert-primary mt-3 text-center fw-bold fs-4" role="alert">
-                전국 관광지 검색
-              </div>
-              <form class="d-flex my-3" action="${root }/tour" method="GET">
+              <form class="d-flex my-3" id="search-form" action="${root }/tour" method="GET">
               	<input type="hidden" name="action" value="search">
                 <select id="search-area" class="form-select me-2" name="areaCode" style="height: 60px">
                   <option value="0" selected>검색 할 지역 선택</option>
@@ -109,12 +55,12 @@
                 />
                 <input
                   id="btn-search"
+                  type="button"
                   class="btn btn-light btn-lg"
-                  type="submit"
                   style="width: 30%; height: 60px"
+                  onclick="javascript:search()"
+                  value="검색"
                 >
-                  	검색
-                </input>
               </form>
             </div>
           </div>
@@ -138,16 +84,23 @@
       <div class="main">
         <!-- main-second start -->
         <div class="tour-list">
-          <div class="row mt-5 text-center fw-bold fs-1"><div id="tour-list-head"></div></div>
+          <div class="row mt-5 text-center fw-bold fs-1">
+          	<div id="tour-list-head">관광지 검색 결과</div>
+          	<c:if test="${empty tourList }">
+          		<h1></h1>
+          		<h1>검색 결과가 없습니다!!</h1>
+          	</c:if>
+          </div>
           <div class="row" id="tour-list-grid">
+          <c:if test="${not empty tourList }">
           	<c:forEach items="${tourList }" var="t">
 	          	<div class="col-lg-4 col-md-6 col-sm-12">
 	            <div class="card mt-5 mb-5 ms-2 me-2 p-2 text-center">
-	            	<c:if test="${not empty imageURL }">
-	            		<img src="${t.imageURL}" class="card-img-top" alt="..." />
+	            	<c:if test="${not empty t.imageURL }">
+	            		<img src="${t.imageURL }" class="card-img-top" alt="..." />
 	            	</c:if>
-	            	<c:if test="${empty imageURL }">
-	            		<img src="../assets/img/noimg.png" class="card-img-top" alt="..." />
+	            	<c:if test="${empty t.imageURL }">
+	            		<img src="${root }/assets/img/noimg.png" class="card-img-top" alt="..." />
 	            	</c:if>
 	              
 	              <div class="card-body p-3">
@@ -158,35 +111,54 @@
 	            </div>
 	          </div>
           	</c:forEach>
-          
+          </c:if>
           </div>
         </div>
         <!-- main-second end -->
       </div>
       <!-- footer start -->
-      <div class="container">
-        <ul class="footer mb-2" style="display: flex; padding: 0">
-          <li class="footer ms-3 me-3 mb-3">
-            <a class="link-dark fw-bold footerA" href="#">&copy SSAFY</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="active link-dark fw-bold footerA" href="#">이용약관</a>
-            <a class="link-dark" style="margin-left: 20px">|</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="link-dark fw-bold footerA" href="#">개인정보처리방침</a>
-          </li>
-        </ul>
-      </div>
+      <%@ include file="/include/footer.jsp" %>
       <!-- footer end -->
     </div>
 
     <script>
       window.onload = () => {
-
-        
+		if ('${areaCode}') {
+			document.getElementById("search-area").value = '${areaCode}';
+		}
+		if ('${contentTypeId}') {
+			document.getElementById("search-content-id").value = '${contentTypeId}';
+		}
+		if ("${keyword}") {
+			document.getElementById("search-keyword").value = "${keyword}";
+		}
+		
+		if ("${not empty tourList}") {
+			
+		}
+		
       };
 
+      const search = () => {
+          let areaCode = document.getElementById("search-area").value;
+          let contentTypeId = document.getElementById("search-content-id").value;
+          let keyword = document.getElementById("search-keyword").value;
+
+          if (parseInt(areaCode) === 0) {
+        	  alert("지역 선택 필수!!!")
+        	  return;
+          }
+          else if (parseInt(contentTypeId) === 0) {
+        	  alert("관광지 유형 검색 필수!!!")
+        	  return;
+          }
+          else if (!keyword) {
+              alert("검색어 입력 필수!!!");
+              return;
+          } 
+          else document.getElementById("search-form").submit();
+      };
+        
       var positions; // marker 배열.
 
       function makeList(data) {

@@ -27,15 +27,14 @@ public class TourDao {
 		ArrayList<TourDto> list = new ArrayList<>();
 		String sql = " SELECT first_image, title, addr1, addr2, latitude, longitude " + 
 					" FROM ATTRACTION_INFO " +
-					" WHERE SIDO_CODE = ? AND CONTENT_TYPE_ID = ? AND TITLE LIKE ? ";
+					" WHERE SIDO_CODE = ? AND CONTENT_TYPE_ID = ? AND TITLE LIKE CONCAT('%', ?, '%')";
 		
 		try {
 			conn = util.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, Integer.parseInt(areaCode));
-			pstmt.setInt(2, Integer.parseInt(contentTypeId));
-			pstmt.setString(3, ("'%"+keyword+"%'"));
-			System.out.println(areaCode + " " + contentTypeId + " " + keyword);
+			pstmt.setString(1, areaCode);
+			pstmt.setString(2, contentTypeId);
+			pstmt.setString(3, keyword);
 			
 			rs = pstmt.executeQuery();
 			

@@ -5,16 +5,12 @@
 <!-- 	<div class="allContainer"> -->
       <!-- header start -->
       <!-- NavBar start-->
-      
-<%@include file="/include/head.jsp" %>
 
-	
-	
 <nav class="navbar navbar-expand-lg nav-bg fw-bold" style="position: relative; background-color: #d8d8d8">
         <div class="container">
           <!-- </div> -->
           <a class="navbar-brand link-light fw-bold fs-2" href="${root }/index.jsp">
-            <img src="../assets/img/logo.png" style="width: 120px; height: 40px" alt="logo"
+            <img src="${root }/assets/img/logo.png" style="width: 120px; height: 40px" alt="logo"
           /></a>
           <button
             class="navbar-toggler justify-content-end"
@@ -41,10 +37,9 @@
 		</c:when>
 		<%-- session에 userInfo 객체 있는 경우(로그인 O) --%>
 		<c:otherwise>
-		
-			<ul class="navbar-nav mb-2 mb-lg-0" id="after-login" style="display: none">
+			<ul class="navbar-nav mb-2 mb-lg-0" id="after-login">
 				<li class="nav-item">
-					<a class="nav-link disabled">${userInfo.name}(${userInfo.id })님 반갑습니다.</a>
+					<a class="nav-link disabled">${userInfo.username}(${userInfo.id })님 반갑습니다.</a>
 				</li>
             	<li class="nav-item">
               		<a class="nav-link active link-dark fw-bold" href="${root }/user?action=logout" onclick="setLogout()">로그아웃</a>
