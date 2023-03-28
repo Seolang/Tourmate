@@ -62,7 +62,36 @@ public class UserDao {
 				result.setId(rs.getString(1));
 				result.setUsername(rs.getString(2));
 			}
+		}finally {
+			util.close(rs, conn, pstmt);
+		}
+		return result;
+	}
+	
+	public static UserDto findPw(String name, String id, String phone) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		UserDto result = null;
+		ResultSet rs = null;
+		DBUtil util = new DBUtil();
+		
+		try {
+			conn = util.getConnection();
+			sql = " SELECT USERNAME, PW FROM USER WHERE USERNAME =? AND ID=? AND PHONE=? ";
+			pstmt = conn.prepareStatement(sql);
 			
+			pstmt.setString(1, name);
+			pstmt.setString(2, id);
+			pstmt.setString(3, phone);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = new UserDto();
+				result.setUsername(rs.getString(1));
+				result.setPw(rs.getString(2));
+			}
 		}finally {
 			util.close(rs, conn, pstmt);
 		}

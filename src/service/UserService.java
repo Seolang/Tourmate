@@ -21,4 +21,8 @@ public class UserService {
 	public static UserDto read(String id, String pw) throws SQLException {
 		return udao.selectOne(id, pw);
 	}
+	
+	public static UserDto findpw(String name, String id, String phone) throws SQLException {
+		return udao.findPw(name, id, phone);
+	}
 }
