@@ -29,6 +29,8 @@ public class UserServlet extends HttpServlet {
 				HttpSession session = req.getSession();
 				session.invalidate();
 				resp.sendRedirect(req.getContextPath());
+			}else if(action.equals("findpwd")) {
+				resp.sendRedirect("user/findpwd.jsp");
 			}
 
 		} catch (Exception e) {
@@ -65,6 +67,14 @@ public class UserServlet extends HttpServlet {
 				}else {
 					resp.sendRedirect("error/loginFail.jsp");
 				}
+			}else if(action.equals("findpw")) {
+				String name = req.getParameter("userName");
+				String id = req.getParameter("userId");
+				String phone = req.getParameter("userPhone");
+				
+				UserDto userPwInfo = uservice.findpw(name, id, phone);
+				req.setAttribute("userPwInfo", userPwInfo);
+				req.getRequestDispatcher("user/findPwdSuccess.jsp").forward(req, resp);
 			}
 
 		} catch (Exception e) {

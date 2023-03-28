@@ -4,18 +4,11 @@
 <html lang="en">
   <head>
     <%@ include file="/include/head.jsp" %>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <script src="./assets/js/searchPwd.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <link rel="stylesheet" href="../assets/css/login.css" />
+
+    <script src="../assets/js/login.js"></script>
   </head>
   <body>
     <div class="allContainer">
@@ -24,23 +17,24 @@
       <!-- main start -->
       <div
         class="bgContainer"
-        style="background: url(./assets/img/originBG.png); background-size: cover; height: 100%"
+        style="background: url(../assets/img/originBG.png); background-size: cover; height: 100%"
       >
         <main class="main-container">
           <div class="login-page">
-            <div class="form">
+            <form class="form" action="${root }/user" method="POST">
               <div class="roof">비밀번호 찾기</div>
-              <input type="text" placeholder="이름" id="name" />
-              <input type="text" placeholder="ID" id="id" />
-              <input type="text" placeholder="휴대폰번호" id="phone" />
+              <input type="text" placeholder="이름" id="name" name="userName" />
+              <input type="text" placeholder="ID" id="id" name="userId" />
+              <input type="text" placeholder="휴대폰번호" id="phone" name="userPhone" />
               <div class="message"></div>
               <button class="login-btn" onclick="searchPw()">다음</button>
+              <input type="hidden" name="action" value="findpw">
               <div class="sub-btn-container" style="display: flex; justify-content: flex-end">
                 <div class="sub-btn">
                   <a href="login.html">로그인 하기</a>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </main>
       </div>
