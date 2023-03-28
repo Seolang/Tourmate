@@ -3,19 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourmate</title>
+    <%@ include file="/include/head.jsp" %>
     <link rel="stylesheet" href="../assets/css/main.css" />
 
     <link rel="stylesheet" href="../assets/css/login.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+
     <script src="../assets/js/register.js"></script>
   </head>
   <body>
@@ -59,20 +51,7 @@
       </div>
       <!-- main end -->
       <!-- footer start -->
-      <div class="container">
-        <ul class="footer mb-2 mt-4" style="display: flex; padding: 0">
-          <li class="footer ms-3 me-3 mb-3">
-            <a class="link-dark fw-bold footerA" href="#">&copy SSAFY</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="active link-dark fw-bold footerA" href="#">이용약관</a>
-            <a class="link-dark" style="margin-left: 20px">|</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="link-dark fw-bold footerA" href="#">개인정보처리방침</a>
-          </li>
-        </ul>
-      </div>
+      <%@ include file="/include/footer.jsp" %>
       <!-- footer end -->
     </div>
   </body>

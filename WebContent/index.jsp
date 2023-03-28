@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <c:set var="root" value="${pageContext.request.contextPath}"/>
+    
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tourmate</title>
+	<%@ include file="/include/head.jsp" %>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -23,50 +19,7 @@
     <div class="allContainer">
       <!-- header start -->
       <!-- NavBar start-->
-      <nav
-        class="navbar navbar-expand-lg nav-bg fw-bold"
-        style="position: relative; background-color: #d8d8d8"
-      >
-        <div class="container">
-          <!-- </div> -->
-          <a class="navbar-brand link-light fw-bold fs-2" href="main.html">
-            <img src="./assets/img/logo.png" style="width: 120px; height: 40px" alt="logo"
-          /></a>
-          <button
-            class="navbar-toggler justify-content-end"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- 로그인 전 -->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0" id="before-login">
-              <li class="nav-item">
-                <a class="nav-link active link-dark" href="/user/login.jsp">로그인</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active link-dark" href="/user/regist.jsp">회원가입</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 로그인 후 -->
-          <ul class="navbar-nav mb-2 mb-lg-0" id="after-login" style="display: none">
-            <li class="nav-item">
-              <a class="nav-link active link-dark fw-bold" href="#" onclick="setLogout()"
-                >로그아웃</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active link-dark fw-bold" href="#">마이페이지</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <%@ include file="/include/nav.jsp" %>
       <!-- NavBar end -->
       <!-- header end -->
       <!-- main start -->
@@ -139,27 +92,10 @@
       <!-- main-second end -->
       <!-- main end -->
       <!-- footer start -->
-      <div class="container">
-        <ul class="footer mb-2" style="display: flex; padding: 0">
-          <li class="footer ms-3 me-3 mb-3">
-            <a class="link-dark fw-bold footerA" href="#">&copy SSAFY</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="active link-dark fw-bold footerA" href="#">이용약관</a>
-            <a class="link-dark" style="margin-left: 20px">|</a>
-          </li>
-          <li class="footer ms-3 me-3 mb-2">
-            <a class="link-dark fw-bold footerA" href="#">개인정보처리방침</a>
-          </li>
-        </ul>
-      </div>
+	  <%@ include file="/include/footer.jsp" %>
       <!-- footer end -->
-      <script src="./assets/js/main.js" type="text/javascript"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"
-      ></script>
+      
     </div>
+    <script src="./assets/js/main.js" type="text/javascript"></script>
   </body>
 </html>
