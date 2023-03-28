@@ -175,21 +175,6 @@
 
         positions = [];
         trips.forEach((area) => {
-          tripList += `
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card mt-5 mb-5 ms-2 me-2 p-2 text-center">
-              <img src="${
-                area.firstimage ? area.firstimage : "./assets/img/noimg.png"
-              }" class="card-img-top" alt="..." />
-              <div class="card-body p-3">
-                <h5 class="card-title">${area.title}</h5>
-                <p class="card-text">${area.addr1} ${area.addr2}</p>
-                <a href="#" class="btn btn-primary" onclick="moveCenter(${area.mapy}, ${
-            area.mapx
-          });">위치보기</a>
-              </div>
-            </div>
-          </div>`;
 
           let markerInfo = {
             title: area.title,

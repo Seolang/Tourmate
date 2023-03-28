@@ -43,7 +43,7 @@
               <div class="card-body p-3">
                 <h5 class="card-title">성심당</h5>
                 <p class="card-text">대전광역시 중구 대종로480번길 15</p>
-                <a href="search.html" class="btn btn-primary" onclick="setLocalStorage(`성심당`)"
+                <a href="${root}/tour?action=search&areaCode=3&contentTypeId=39&keyword=성심당" class="btn btn-primary"
                   >상세보기</a
                 >
               </div>
@@ -60,9 +60,8 @@
                 <h5 class="card-title">한밭수목원</h5>
                 <p class="card-text">대전광역시 서구 둔산대로 169</p>
                 <a
-                  href="search.html"
+                  href="${root}/tour?action=search&areaCode=3&contentTypeId=12&keyword=한밭수목원"
                   class="btn btn-primary"
-                  onclick="setLocalStorage(`한밭수목원`)"
                   >상세보기</a
                 >
               </div>
@@ -79,9 +78,8 @@
                 <h5 class="card-title">대전 엑스포 아쿠아리움</h5>
                 <p class="card-text">대전광역시 유성구 엑스포로 1</p>
                 <a
-                  href="search.html"
+                  href="${root}/tour?action=search&areaCode=3&contentTypeId=14&keyword=대전 엑스포 아쿠아리움"
                   class="btn btn-primary"
-                  onclick="setLocalStorage(`대전 엑스포 아쿠아리움`)"
                   >상세보기</a
                 >
               </div>
@@ -96,6 +94,5 @@
       <!-- footer end -->
       
     </div>
-    <script src="./assets/js/main.js" type="text/javascript"></script>
   </body>
 </html>
