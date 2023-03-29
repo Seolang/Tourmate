@@ -41,6 +41,7 @@ public class TourController extends HttpServlet {
 					ArrayList<TourDto> tourList = tourService.searchPlace(areaCode, contentTypeId, keyword);
 					if (tourList.size() > 0) {
 						req.setAttribute("tourList", tourList);
+						System.out.println(tourList);
 					}
 					req.setAttribute("areaCode", areaCode);
 					req.setAttribute("contentTypeId", contentTypeId);
