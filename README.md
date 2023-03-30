@@ -1,92 +1,50 @@
-# pjt_daejeon_9th_class5_backend_team05
+# 대전 5반 Team_5 - Front PJT
+
+## 👪 팀 구성
+
+👨 **Teammate_01** : **우승빈** (Woo Seungbeen)
+
+👩 **Teammate_02** : **조해린** (Cho Haerin)
+
+<br/>
 
 
+## 📺 주요 화면
 
-## Getting started
+### 1. 메인 화면
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225957297-abb13927-fa39-4cf7-90f7-1483c2801ebf.png">
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225957696-99c3cc8c-8342-4ef6-8242-3a04543a4771.png">
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
+- 설명 : 관광지 검색하러가기 버튼을 누르면 지역별 관광지 정보를 검색할 수 있는 페이지로 이동한다. 아래는 추천 장소 3곳을 표시했다.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### 2. 지역별 관광지 정보 수집 - 관광지, 숙박, 음식점, 문화시설, 공연, 여행코스, 쇼핑 조회
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958402-a96be9bb-21ac-473c-bb98-30b7a723f8a2.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958460-875f481d-d51e-4be1-b58f-77defdb79fb6.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958475-3d2e5af5-2617-4fb4-b57b-a27cbcad6e7e.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958495-2099e86f-947a-4db4-8674-85f85d09966e.png">
 
-```
-cd existing_repo
-git remote add origin https://lab.ssafy.com/dntmdqls0912/pjt_daejeon_9th_class5_backend_team05.git
-git branch -M master
-git push -uf origin master
-```
+- 설명 : 한국관광공사에서 제공하는 공공데이터를 이용해 지역별 관광지 정보를 얻어오고, 관광지 정보를 지역별 원하는 컨텐츠 별로 조회할 수 있다.
+검색 버튼을 누르면 해당 관광지를 지도에서 나태내주고 검색목록에서 상세정보를 확인할 수 있다.
 
-## Integrate with your tools
+### 3. 회원가입 화면
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958887-36c5fa5b-3824-4387-82f1-d8c2190fe3f7.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958943-b96d1bd4-37a5-4f23-a331-3218e5e669c6.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958979-5649723a-e4c9-4a5a-8226-54af9ce05438.png">
 
-- [ ] [Set up project integrations](https://lab.ssafy.com/dntmdqls0912/pjt_daejeon_9th_class5_backend_team05/-/settings/integrations)
+- 설명 : 회원가입 시, localStorage에 id를 key값으로, 나머지 정보를 value값으로 저장한다. 만약 이미 존재하는 id로 회원가입을 시도한다면 경고 메시지를 표시하도록 구현했다.
 
-## Collaborate with your team
+### 4. 비밀번호 찾기 화면
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959543-c36b5353-94c2-45d8-944c-a9d1f599a128.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959572-a02e7010-7ab0-475a-b3ee-17a3e12d612f.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959587-c7bef410-abd7-4995-9975-6e497ddc9576.png">
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- 설명 : 입력값이 존재하지 않거나, 존재하지 않는 회원정보면 해당하는 경고 메시지를 표시하도록 하고, 존재하는 회원정보인 경우 id를 key값으로 해당 비밀번호를 표시해주도록 했다.
 
-## Test and Deploy
+### 5. 로그인 화면
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225960187-3cc4b8e8-019f-4286-924c-683d99532b42.png">
+<img width="80%" src="https://user-images.githubusercontent.com/104357560/225960243-f4d208cd-2bdc-4ece-8254-fd32021badf3.png">
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- 설명 : 로그인 시, 존재하지 않는 회원정보이면 경고 메시지를 보이고 로그인을 성공하면 메인페이지로 바로 이동한다.
