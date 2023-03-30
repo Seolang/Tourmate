@@ -1,4 +1,4 @@
-# 대전 5반 Team_5 - Front PJT
+# 대전 5반 Team_5 - Back-End PJT
 
 ## 👪 팀 구성
 
