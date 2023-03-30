@@ -17,10 +17,10 @@
       <!-- main start -->
       <div
         class="bgContainer"
-        style="background: url(../assets/img/originBG.png); background-size: cover; height: 100%"
+        style="background: url(../assets/img/originBG.png); background-size: cover; height: 800px;"
       >
         <main class="main-container" >
-          <div class="login-page" style="padding: 70px 0px 0px">
+          <div class="login-page">
             <form class="form" action="<%=request.getContextPath() %>/user" method="post">
               <div class="roof">비밀번호 변경</div>
               <input type="text" placeholder="아이디 입력" id="id" name="userId" />
