@@ -45,7 +45,7 @@
               		<a class="nav-link active link-dark fw-bold" href="${root }/user?action=logout" onclick="setLogout()">로그아웃</a>
             	</li>
            		<li class="nav-item">
-              		<a class="nav-link active link-dark fw-bold" href="#">마이페이지</a>
+              		<a class="nav-link active link-dark fw-bold" href="${root }/user?action=mypage">마이페이지</a>
             	</li>
           	</ul>
 		</c:otherwise>

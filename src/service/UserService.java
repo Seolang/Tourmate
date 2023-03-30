@@ -25,4 +25,8 @@ public class UserService {
 	public static UserDto findpw(String name, String id, String phone) throws SQLException {
 		return udao.findPw(name, id, phone);
 	}
+	
+	public static int changePw(String id, String nowPw, String changePw) throws SQLException {
+		return udao.modify(id, nowPw, changePw);
+	}
 }
