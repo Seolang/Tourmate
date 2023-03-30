@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%-- 부트스트랩 사용을 위한 코드 --%>
 <!-- JavaScript Bundle with Popper -->
-      <div class="container" style="height:100%;">
+      <div style="height:40px; margin-top:20px; margin-left:50px;">
         <ul class="footer mb-2" style="display: flex; padding: 0">
           <li class="footer ms-3 me-3 mb-3">
             <a class="link-dark fw-bold footerA" href="#">&copy SSAFY</a>

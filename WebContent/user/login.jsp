@@ -18,7 +18,7 @@
       <!-- main start -->
       <div
         class="bgContainer"
-        style="background: url(../assets/img/originBG.png); background-size: cover; height: 100%"
+        style="background: url(../assets/img/originBG.png); background-size: cover; height: 800px;"
       >
         <main class="main-container">
           <div class="login-page">

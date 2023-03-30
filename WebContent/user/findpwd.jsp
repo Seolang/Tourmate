@@ -17,7 +17,7 @@
       <!-- main start -->
       <div
         class="bgContainer"
-        style="background: url(../assets/img/originBG.png); background-size: cover; height: 100%"
+        style="background: url(../assets/img/originBG.png); background-size: cover; height: 800px"
       >
         <main class="main-container">
           <div class="login-page">
@@ -31,7 +31,7 @@
               <input type="hidden" name="action" value="findpw">
               <div class="sub-btn-container" style="display: flex; justify-content: flex-end">
                 <div class="sub-btn">
-                  <a href="login.html">로그인 하기</a>
+                  <a href="${root }/user?action=login">로그인 하기</a>
                 </div>
               </div>
             </form>
