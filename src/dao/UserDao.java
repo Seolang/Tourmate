@@ -97,4 +97,28 @@ public class UserDao {
 		}
 		return result;
 	}
+	
+	public static int modify(String id, String nowPw, String changePw) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		int result = 0;
+		DBUtil util = new DBUtil();
+		
+		try {
+			conn = util.getConnection();
+			sql = " UPDATE USER SET PW=? WHERE ID=? AND PW=? ";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, changePw);
+			pstmt.setString(2, id);
+			pstmt.setString(3, nowPw);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			util.close(conn, pstmt);
+		}
+		return result;
+	}
 }

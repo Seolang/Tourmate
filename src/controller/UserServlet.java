@@ -31,6 +31,8 @@ public class UserServlet extends HttpServlet {
 				resp.sendRedirect(req.getContextPath());
 			}else if(action.equals("findpwd")) {
 				resp.sendRedirect("user/findpwd.jsp");
+			}else if(action.equals("mypage")) {
+				resp.sendRedirect("user/myPage.jsp");
 			}
 
 		} catch (Exception e) {
@@ -75,6 +77,21 @@ public class UserServlet extends HttpServlet {
 				UserDto userPwInfo = uservice.findpw(name, id, phone);
 				req.setAttribute("userPwInfo", userPwInfo);
 				req.getRequestDispatcher("user/findPwdSuccess.jsp").forward(req, resp);
+			}else if(action.equals("modify")) {
+				String id = req.getParameter("userId");
+				String nowPw = req.getParameter("nowPw");
+				String changePw = req.getParameter("changePw");
+				String changePwCheck = req.getParameter("changePwCheck");
+				if(!changePw.equals(changePwCheck)) {
+					resp.sendRedirect("error/notEqPw.jsp");
+				}else {
+					int isChange = uservice.changePw(id, nowPw, changePw);
+					if(isChange == 1) {
+						resp.sendRedirect("user/changePwSuccess.jsp");
+					}else {
+						resp.sendRedirect("error/chagePwFail.jsp");
+					}
+				}
 			}
 
 		} catch (Exception e) {
