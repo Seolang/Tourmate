@@ -46,10 +46,12 @@
 
 ### 4. 회원가입 화면
 <img width="80%" src="https://user-images.githubusercontent.com/104357560/225958887-36c5fa5b-3824-4387-82f1-d8c2190fe3f7.png">
-<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958943-b96d1bd4-37a5-4f23-a331-3218e5e669c6.png">
-<img width="80%" src="https://user-images.githubusercontent.com/104357560/225958979-5649723a-e4c9-4a5a-8226-54af9ce05438.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229052477-25b99299-e493-4622-8281-85ff8831f0bf.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229053763-192e3107-3439-440a-934b-11ee24f0e99e.png">
 
-- 설명 : 회원가입 시, localStorage에 id를 key값으로, 나머지 정보를 value값으로 저장한다. 만약 이미 존재하는 id로 회원가입을 시도한다면 경고 메시지를 표시하도록 구현했다.
+- 회원가입 시, DB로 아이디 및 회원 정보를 전달한다. 아이디와 비밀번호, 전화번호등의 요구조건을 만족하지 않으면 등록하기 버튼 상단에 경고메세지를 띄운다.
+- 만약 이미 존재하는 id로 회원가입을 시도한다면 에러페이지로 이동시킨다.
+- 회원가입에 성공하면 회원가입 성공 Alert메세지를 띄우고, 로그인 창으로 돌아간다.
 
 ### 5. 비밀번호 찾기 화면
 <img width="80%" src="https://user-images.githubusercontent.com/104357560/225959543-c36b5353-94c2-45d8-944c-a9d1f599a128.png">
