@@ -121,4 +121,26 @@ public class UserDao {
 		}
 		return result;
 	}
+
+	public int delete(String id) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		int result = 0;
+		DBUtil util = new DBUtil();
+		
+		try {
+			conn = util.getConnection();
+			sql = " DELETE FROM USER WHERE ID=? ";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			util.close(conn, pstmt);
+		}
+		return result;
+	}
 }

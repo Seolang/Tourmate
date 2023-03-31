@@ -17,7 +17,7 @@
 </style>
 
 <div id="map" class="mt-3"
-	style="width: 80%; height: 400px; margin: 0 auto; border-radius: 20px;"></div>
+	style="width: 80%; height: 500px; margin: 0 auto; border-radius: 20px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1bf9d21ba0c43359bc262d6d369d6e58"></script>
 <script>
