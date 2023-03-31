@@ -54,10 +54,24 @@
 - 회원가입에 성공하면 회원가입 성공 Alert메세지를 띄우고, 로그인 창으로 돌아간다.
 
 ### 5. 비밀번호 찾기 화면
-<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959543-c36b5353-94c2-45d8-944c-a9d1f599a128.png">
-<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959572-a02e7010-7ab0-475a-b3ee-17a3e12d612f.png">
-<img width="80%" src="https://user-images.githubusercontent.com/104357560/225959587-c7bef410-abd7-4995-9975-6e497ddc9576.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229054587-f3551a06-ae5e-443e-a8d9-218e07b60d79.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229054673-12acdc3e-d7ad-4529-ac49-3dd0184e6c18.png">
 
-- 설명 : 입력값이 존재하지 않거나, 존재하지 않는 회원정보면 해당하는 경고 메시지를 표시하도록 하고, 존재하는 회원정보인 경우 id를 key값으로 해당 비밀번호를 표시해주도록 했다.
+- 이름과 아이디, 전화번호를 입력하여 일치하는 회원이 존재하면 Alert으로 해당하는 유저의 아이디와 비밀번호를 표시한다.
+
+
+### 6. 마이페이지
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229062415-63394cc8-175d-4ea3-bf8b-f4a2e709c141.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229062480-d5f04891-a366-4b9b-aa6e-1d4c91d7fa5d.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229062509-88e27dd6-d7d1-44ab-8702-660e5937eddb.png"><br>
+
+- 마이페이지에서는 비밀번호를 변경하고, 회원탈퇴를 진행할 수 있다.
+- 현재 사용중인 아이디와 비밀번호를 입력하고, 새로운 비밀번호를 입력하고서 정보수정 버튼을 누르면 비밀번호 변경 메세지를 띄우며 메인화면으로 돌아간다.
+
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229062543-09a7d454-8285-4c9a-b832-b6f21c1d2a99.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229062583-90d46d77-47aa-4680-8f63-69a571144a5b.png">
+
+
+- 회원 탈퇴 버튼을 누를 경우 정말로 회원을 탈퇴할 것이냐는 메세지를 한번 더 띄우고, 이를 수락하면 회원을 탈퇴한 후 메인화면으로 돌아간다.
 
 
