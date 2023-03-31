@@ -37,7 +37,11 @@
 
 ### 3. 로그인 화면
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229049679-236a854e-2090-471c-86b9-f57445cc6e5e.png">
+
+- 로그인 실패시
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229050025-062e00ff-955d-433e-b8b3-429ad4b9d50c.png">
+
+- 로그인 성공시
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229050302-ca368802-7f88-41b3-8c84-481f118bc299.png">
 
 
