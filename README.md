@@ -25,12 +25,15 @@
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229039799-9c338770-4ccc-41c2-a80c-ec5559d823c3.png">
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229039850-ed86a43e-1b73-4b04-b56b-065992b299be.png">
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229039113-96467970-e1ea-471a-b3e4-4eb8c3e8bfe0.png">
-<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039076-6f095ad3-e513-40eb-b824-43cedda923d9.png">
-
 
 - 설명 : 검색 페이지 로드 시 데이터베이스로부터 지역별 코드를 불러와 검색창의 지역 Select 버튼을 구성하고 이를 통해, 관광지 정보를 지역별 원하는 컨텐츠 별로 조회할 수 있다.
 - 지역, 관광지 유형, 검색어를 입력 후 검색 버튼을 누르면 해당 검색 쿼리와 관련된 내용을 데이터베이스로부터 검색하고, 결과 목록을 그리드 형태로 나타낸다.
+
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039076-6f095ad3-e513-40eb-b824-43cedda923d9.png">
 - 또한 상세보기 버튼을 누를 시 상단의 지도가 해당 관광지의 위치로 이동하며 지도 위의 아이콘에 마우스를 가져가면 관광지 이름, 주소와 썸네일이 나타난다.
+
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229040112-206d8102-7a43-409e-99c9-944f6479e411.png">
+- 지역, 관광지 유형, 검색어를 입력하지 않을 시 선택을 하라는 Alert 창을 띄운다.
 
 ### 3. 회원가입 화면
 <img width="80%" src="https://user-images.githubusercontent.com/104357560/225958887-36c5fa5b-3824-4387-82f1-d8c2190fe3f7.png">
