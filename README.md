@@ -22,10 +22,11 @@
 
 ### 2. 지역별 관광지 정보 수집 - 관광지, 숙박, 음식점, 문화시설, 공연, 여행코스, 쇼핑 조회
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229038864-603bb1b8-2115-416a-8338-c8866135b0d1.png">
-<img width="80%" src="https://user-images.githubusercontent.com/26866109/229038998-a3a46988-a498-401b-a03a-d2a91ffba572.png">
-<img width="80%" src="https://user-images.githubusercontent.com/26866109/229038960-2334154e-a21f-4d8c-8cee-a72cbb145744.png">
-<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039076-6f095ad3-e513-40eb-b824-43cedda923d9.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039799-9c338770-4ccc-41c2-a80c-ec5559d823c3.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039850-ed86a43e-1b73-4b04-b56b-065992b299be.png">
 <img width="80%" src="https://user-images.githubusercontent.com/26866109/229039113-96467970-e1ea-471a-b3e4-4eb8c3e8bfe0.png">
+<img width="80%" src="https://user-images.githubusercontent.com/26866109/229039076-6f095ad3-e513-40eb-b824-43cedda923d9.png">
+
 
 - 설명 : 검색 페이지 로드 시 데이터베이스로부터 지역별 코드를 불러와 검색창의 지역 Select 버튼을 구성하고 이를 통해, 관광지 정보를 지역별 원하는 컨텐츠 별로 조회할 수 있다.
 - 지역, 관광지 유형, 검색어를 입력 후 검색 버튼을 누르면 해당 검색 쿼리와 관련된 내용을 데이터베이스로부터 검색하고, 결과 목록을 그리드 형태로 나타낸다.
