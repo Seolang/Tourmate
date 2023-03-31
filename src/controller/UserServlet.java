@@ -37,6 +37,7 @@ public class UserServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			resp.sendRedirect("error/error.jsp");
 		}
 	}
@@ -91,6 +92,16 @@ public class UserServlet extends HttpServlet {
 					}else {
 						resp.sendRedirect("error/chagePwFail.jsp");
 					}
+				}
+			}else if(action.equals("delete")) {
+				HttpSession session = req.getSession();
+				UserDto dto = (UserDto) session.getAttribute("userInfo");
+				int result = uservice.deleteUser(dto.getId());
+				if (result == 1) {
+					session.invalidate();
+					resp.sendRedirect("user/deleteUserSuccess.jsp");
+				} else {
+					resp.sendRedirect("error/deleUserFail.jsp");
 				}
 			}
 

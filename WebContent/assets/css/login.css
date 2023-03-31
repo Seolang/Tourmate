@@ -60,6 +60,18 @@ a {
 .form button:focus {
   background: #50a3a2;
 }
+
+#delete-btn {
+	background-color:red;
+}
+
+#delete-btn:hover,
+#delete-btn:active,
+#delete-btn:focus {
+	background-color:#8b0000;
+}
+
+
 .form .message {
   margin: 15px 0 30px 0;
   color: #df6767;
@@ -112,3 +124,4 @@ a {
 .sub-btn {
   margin: 5px;
 }
+
