@@ -5,6 +5,14 @@
   list-style-type: none;
   text-decoration-line: none;
 }
+
+
+
+body {
+  background-color: #f6f6f6;
+  height: 100%;
+}
+
 .allContainer {
   background-color: #f6f6f6;
   z-index: -5;

@@ -29,4 +29,8 @@ public class UserService {
 	public static int changePw(String id, String nowPw, String changePw) throws SQLException {
 		return udao.modify(id, nowPw, changePw);
 	}
+
+	public int deleteUser(String id) throws SQLException {
+		return udao.delete(id);
+	}
 }
